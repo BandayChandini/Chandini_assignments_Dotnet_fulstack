@@ -1,0 +1,68 @@
+﻿@page
+@model BookLogin.Pages.Index1Model
+@{
+}
+<div class="container">
+    <form method="Post">
+        <table class="table">
+            <tr>
+                <td>BookId</td>
+                <td>
+                    <input type="number" asp-for="@Model.Book.BookId" />
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" asp-for="@Model.Book.Name" />
+                </td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>
+                    <input type="number" asp-for="@Model.Book.Price" />
+                </td>
+            </tr>
+            <tr>
+                <td>Language</td>
+                <td>
+                    <input type="text" asp-for="@Model.Book.Language" />
+                </td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td>
+                    <input type="text" asp-for="@Model.Book.Author" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Add" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>BookId</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Language</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.List)
+            {
+                <tr>
+                    <td>@item.BookId</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Language</td>
+                    <td>@item.Author</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
